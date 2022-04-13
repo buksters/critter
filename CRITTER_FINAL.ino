@@ -58,8 +58,8 @@ static unsigned long currentTime;
 long time1, time2 = 0;
 static long timerStart = 0;
 
-const int elev_position = 90;
-const int low_position = 0;
+const int elev_position = 90; //normal head position
+const int low_position = 0; //retracted head position
 const int volume = 10; // max is 10
 
 void setup(){
@@ -105,9 +105,9 @@ void loop() {
     }
   }
 
-  if (timerStart == 0) {
+  // adjusting time to set timer
+  if (timerStart == 0) { 
     buttonState = LOW;
-//    currentTime = millis();
     potValue = analogRead(potPin);
     val = map(potValue, 0, 1023, 0, ledCount+1);
     
@@ -132,18 +132,8 @@ void loop() {
         buttonState = LOW;
       }
   }
-
   
-//  for(uint16_t i = 0; i < ledCount; i++)
-//  {
-//    //white (honeydew)
-//    colors[i].red = 240;
-//    colors[i].green = 255;
-//    colors[i].blue = 240;
-//  }
-//  ledStrip.write(colors, ledCount, 1);
-  
-
+  // during countdown
   if (timerStart > 0 && millis()-timerStart >= 1000) {
     timerStart += 1000;
     startNumber--;
@@ -195,7 +185,6 @@ void loop() {
               pausedTime = 0;
               time1 = 0;
               goto alarm;
-//              break;
             }
             time1 = 0;
           }

@@ -7,12 +7,6 @@ const uint8_t clockPin = 6;
 // Create an object for writing to the LED strip.
 APA102<dataPin, clockPin> ledStrip;
 
-//// Set the number of LEDs to control.
-//uint16_t ledCount = 4;
-//
-//// Create a buffer for holding the colors (3 bytes per color).
-//rgb_color colors[ledCount];
-
 // Set the brightness to use (the maximum is 31).
 const uint8_t brightness = 1;
 
@@ -44,33 +38,14 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   currentTime = millis();
-
-//  //troubleshooting
-//  potValue = analogRead(potPin);
-//  val = map(potValue, 0, 1023, 0, 15);
-//  Serial.println(val);
   
   if (timerStart == 0) {
     buttonState = LOW;
-//    currentTime = millis();
     potValue = analogRead(potPin);
     val = map(potValue, 0, 1023, 0, ledCount+1);
 
     Serial.println(val);
-
-//    ledCount = val;
-    
-//    const uint16_t ledCount = val;
-//    rgb_color colors[ledCount];
-//    for(uint16_t i = 0; i < ledCount; i++)
-//    {
-//      colors[i].red = 255;
-//      colors[i].green = 69;
-//      colors[i].blue = 0;
-//    }
-//    ledStrip.write(colors, ledCount, 1);
 
   ledStrip.startFrame();
   for(uint16_t i = 0; i < ledCount; i++)
@@ -98,9 +73,6 @@ void loop() {
     timerStart += 1000;
     startNumber--;
 
-//    ledCount = startNumber;
-//    rgb_color colors[ledCount];
-//    ledStrip.write(colors, startNumber, 1);
     ledStrip.startFrame();
     for(uint16_t i = 0; i < ledCount; i++)
     {
@@ -116,7 +88,6 @@ void loop() {
     if (startNumber < endNumber) {
       startNumber--;
       while (buttonState == LOW) {
-//        TimerFreeTone(BUZ_PIN,1000,200);
         buttonState = digitalRead(buttonPin);
       }
       while (buttonState == HIGH) {

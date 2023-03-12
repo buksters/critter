@@ -1,7 +1,7 @@
 # Critter
-*A skittish timer that serves as a playful (and possibly painful) reminder to be gentle.*
+*An anthropomorphic timer that can express and defend itself.*
 
-Alarms are annoying. But does that justify our anger towards alarm clocks, and the satisfaction we get from slamming down on their snooze buttons in the morning, when they're just trying to do their jobs? What if an alarm clock could fight back - or at least, defend itself? That was the thought process behind Critter: the self-protective timer.
+Our society is one of mass production and mass waste, which is destroying the planet. How do we get consumers to care more about increasing the life span of their material goods when words aren't enough? To change the mindset of objects being disposable and replaceable? ...What if objects were self-preserving?
 
 ![IMG_1483](https://user-images.githubusercontent.com/51464661/163280083-084031aa-b040-4175-893a-f0304b0622b3.GIF)
 
